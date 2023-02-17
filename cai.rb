@@ -5,20 +5,20 @@
 class Cai < Formula
   desc ""
   homepage "https://github.com/TomByte/commit-ai"
-  version "1.1.0"
+  version "1.1.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_darwin_amd64.tar.gz"
-      sha256 "afed5626539dbe8d57461a277696e7667d456d6a8b2699eccc84016a1c879c6b"
+    if Hardware::CPU.arm?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.1/commit-ai_1.1.1_darwin_arm64.tar.gz"
+      sha256 "a1caa20fb7f08abfed2488103fb0dc252c6b98198fcd2f42d22994db146d3322"
 
       def install
         bin.install "cai"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_darwin_arm64.tar.gz"
-      sha256 "f621dca0d40996dad2864aa9d4170c71e2fc3d629f7e8b5903efac221f41bb0f"
+    if Hardware::CPU.intel?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.1/commit-ai_1.1.1_darwin_amd64.tar.gz"
+      sha256 "05901828be76f1dd9cf18b8b21538b13f76184bb1bf117995ac317723752e6e7"
 
       def install
         bin.install "cai"
@@ -27,17 +27,17 @@ class Cai < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_linux_arm64.tar.gz"
-      sha256 "a34df5c757942c4909630384785cb8358e69dfcce3ec01c05fa1b55ef360cccc"
+    if Hardware::CPU.intel?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.1/commit-ai_1.1.1_linux_amd64.tar.gz"
+      sha256 "13dcfa67b6e959357044d2485ecdc280d9593df02a3be583656bcccf6854d154"
 
       def install
         bin.install "cai"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_linux_amd64.tar.gz"
-      sha256 "c4483bb6644fc5e65ad1b8caf8f5656dff85eeacc77a250fa7cbe24ae0d93d2d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.1/commit-ai_1.1.1_linux_arm64.tar.gz"
+      sha256 "928609cd59b15b34867015ef8cda57c9b9b5ad12d32f5f5f3b2b685c7c6021cb"
 
       def install
         bin.install "cai"
