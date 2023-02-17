@@ -5,29 +5,39 @@
 class Cai < Formula
   desc ""
   homepage "https://github.com/TomByte/commit-ai"
-  version "1.0.4"
+  version "1.0.5"
 
   on_macos do
-    url "https://github.com/TomByte/commit-ai/releases/download/v1.0.4/commit-ai_1.0.4_darwin_all.tar.gz"
-    sha256 "85e7b6ee57059bfd3300241dd54afd73d82b61dc7844a23b0678a0a91f9a2063"
-
-    def install
-      bin.install "commit-ai"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.4/commit-ai_1.0.4_linux_amd64.tar.gz"
-      sha256 "3ce6a858e8f1a45e1e2fd5d0f0280a4af23c8632af6bb2b543af19768120ee92"
+    if Hardware::CPU.arm?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_darwin_arm64.tar.gz"
+      sha256 "43d1c1b50c01e7795512600adf942069919ae6b4558ef54a97154f0cdb130eab"
 
       def install
         bin.install "cai"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_darwin_amd64.tar.gz"
+      sha256 "57a0d709753e5db5cead4de79f882516ef7b73093f12bb4fc7c96f8eaa17c7ac"
+
+      def install
+        bin.install "cai"
+      end
+    end
+  end
+
+  on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.4/commit-ai_1.0.4_linux_arm64.tar.gz"
-      sha256 "7262a8318c91aa625a8ef9cab26ba943a0e0b954c59b42fa012d69aad8a0e37a"
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_linux_arm64.tar.gz"
+      sha256 "a26f04b2753f0667ca465436cf7ff64819412406e60bf0642a9043de9f408cb5"
+
+      def install
+        bin.install "cai"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_linux_amd64.tar.gz"
+      sha256 "c374bdad52b3df42ea1bb95b04c63773c1bb4786497f3875293171a9f22850ac"
 
       def install
         bin.install "cai"
