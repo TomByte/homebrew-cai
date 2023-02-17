@@ -5,20 +5,20 @@
 class Cai < Formula
   desc ""
   homepage "https://github.com/TomByte/commit-ai"
-  version "1.0.5"
+  version "1.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_darwin_arm64.tar.gz"
-      sha256 "43d1c1b50c01e7795512600adf942069919ae6b4558ef54a97154f0cdb130eab"
+    if Hardware::CPU.intel?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_darwin_amd64.tar.gz"
+      sha256 "afed5626539dbe8d57461a277696e7667d456d6a8b2699eccc84016a1c879c6b"
 
       def install
         bin.install "cai"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_darwin_amd64.tar.gz"
-      sha256 "57a0d709753e5db5cead4de79f882516ef7b73093f12bb4fc7c96f8eaa17c7ac"
+    if Hardware::CPU.arm?
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_darwin_arm64.tar.gz"
+      sha256 "f621dca0d40996dad2864aa9d4170c71e2fc3d629f7e8b5903efac221f41bb0f"
 
       def install
         bin.install "cai"
@@ -28,16 +28,16 @@ class Cai < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_linux_arm64.tar.gz"
-      sha256 "a26f04b2753f0667ca465436cf7ff64819412406e60bf0642a9043de9f408cb5"
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_linux_arm64.tar.gz"
+      sha256 "a34df5c757942c4909630384785cb8358e69dfcce3ec01c05fa1b55ef360cccc"
 
       def install
         bin.install "cai"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TomByte/commit-ai/releases/download/v1.0.5/commit-ai_1.0.5_linux_amd64.tar.gz"
-      sha256 "c374bdad52b3df42ea1bb95b04c63773c1bb4786497f3875293171a9f22850ac"
+      url "https://github.com/TomByte/commit-ai/releases/download/v1.1.0/commit-ai_1.1.0_linux_amd64.tar.gz"
+      sha256 "c4483bb6644fc5e65ad1b8caf8f5656dff85eeacc77a250fa7cbe24ae0d93d2d"
 
       def install
         bin.install "cai"
